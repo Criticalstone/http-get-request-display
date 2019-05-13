@@ -11,15 +11,12 @@ const io = socketIo(server); // < Interesting!
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
-const getApiAndEmit = async socket => {
-    socket.emit("hejsan!!!!");
-    console.log("client connected");
-  };
-
 io.on("connection", socket => {
-    console.log("New client connected"), setInterval(
-        () => getApiAndEmit(socket),
-        10000
-    );
+    console.log("client connected");
+    app.get('/message', (req, res) => {
+        console.log("data: " + req.query.data);
+        socket.emit("message", "" + req.query.data);
+    })
     socket.on("disconnect", () => console.log("Client disconnected"));
 });
+
