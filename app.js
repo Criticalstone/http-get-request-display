@@ -8,4 +8,18 @@ const app = express();
 app.use(index);
 const server = http.createServer(app);
 const io = socketIo(server); // < Interesting!
-const getApiAndEmit = "TODO"
+
+server.listen(port, () => console.log(`Listening on port ${port}`));
+
+const getApiAndEmit = async socket => {
+    socket.emit("hejsan!!!!");
+    console.log("client connected");
+  };
+
+io.on("connection", socket => {
+    console.log("New client connected"), setInterval(
+        () => getApiAndEmit(socket),
+        10000
+    );
+    socket.on("disconnect", () => console.log("Client disconnected"));
+});
