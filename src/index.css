@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html, #root, body{
+  height:100%;
+}
+
+.outer{
+  height: 100%;
+  flex-direction: row;
+  display: flex;
+}
+
+.textDump{
+  height: 100%;
+  float: right;
+  position: relative;
+  width: 80%;
+  background-color: #696969;
+  display: flex;
+  flex-direction: row;
+}
+
+.textDump div{
+  margin: 12px;
+  background-color:blue;
+  height: auto;
+  width: 100%;
+  overflow:auto;
+}
+
+.options{
+  position: relative;
+  height: 100%;
+  float: left;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+.options div{
+  margin: 12px;
+  height: auto;
+  width: 100%;
+  overflow:auto;
+  background-color: green;
+}

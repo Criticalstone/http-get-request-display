@@ -4,7 +4,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      response: [],
+      response: ["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test",
+    "test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"
+  ,"test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
       endpoint: "http://127.0.0.1:4001"
     };
   }
@@ -20,12 +22,25 @@ class App extends Component {
   render() {
     const { response } = this.state;
     return (
-        <div style={{ textAlign: "center" }}>
+      <div className="outer">
+      <div className="options">
+      <div>
+      <ul>
+        {response.map((item, index) => (
+          <li id={index}>{item}</li>
+        ))}
+      </ul>
+      </div>
+      </div>
+      <div className="textDump">
+      <div>
         <ul>
           {response.map((item, index) => (
             <li id={index}>{item}</li>
           ))}
         </ul>
+        </div>
+        </div>
         </div>
     );
   }
