@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
+import {Button,ButtonGroup} from "react-bootstrap";
+
+
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      response: ["test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test",
-    "test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"
-  ,"test","test","test","test","test","test","test","test","test","test","test","test","test","test","test","test"],
+      response: ["test","test"],
       endpoint: "http://127.0.0.1:4001"
     };
   }
@@ -25,11 +27,11 @@ class App extends Component {
       <div className="outer">
       <div className="options">
       <div>
-      <ul>
-        {response.map((item, index) => (
-          <li id={index}>{item}</li>
-        ))}
-      </ul>
+          <ButtonGroup vertical>
+          <Button variant="primary" size="sm">
+            Clear
+          </Button>
+          </ButtonGroup>
       </div>
       </div>
       <div className="textDump">

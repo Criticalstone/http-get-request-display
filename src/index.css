@@ -34,17 +34,21 @@ html, #root, body{
 
 .textDump div{
   margin: 12px;
-  background-color:blue;
+  background-color: white;
   height: auto;
   width: 100%;
   overflow:auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
 }
+
 
 .options{
   position: relative;
   height: 100%;
   float: left;
   width: 20%;
+  background-color: #696969;
   display: flex;
   flex-direction: row;
 }
@@ -52,7 +56,8 @@ html, #root, body{
 .options div{
   margin: 12px;
   height: auto;
-  width: 100%;
+  width: fill;
   overflow:auto;
-  background-color: green;
+  background-color: white;
+  box-shadow: 2px 2px 5px black;
 }
