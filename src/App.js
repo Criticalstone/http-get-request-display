@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       response: ["test","test"],
-      endpoint: "http://127.0.0.1:4001"
+      endpoint: "http://127.0.0.1:4001",
+      duplicates : true
     };
   }
   componentDidMount() {
@@ -22,15 +23,23 @@ class App extends Component {
     });
   }
   render() {
-    const { response } = this.state;
+    const { duplicates } = this.state;
+    var { response } = this.state;
+    if(!duplicates){
+      var set = new Set(response);
+      response = Array.from(set);
+    }
     return (
       <div className="outer">
       <div className="options">
       <div>
           <ButtonGroup vertical>
-          <Button variant="primary" size="sm">
+          <Button variant="primary" size="sm" onClick={this.clear}>
             Clear
           </Button>
+            <Button variant="primary" size="sm" onClick={this.duplicates}>
+              {duplicates ? "Remove duplicates" : "Allow Duplicates"}
+            </Button>
           </ButtonGroup>
       </div>
       </div>
@@ -46,5 +55,15 @@ class App extends Component {
         </div>
     );
   }
+
+  clear = () =>  {
+    this.setState({response:[]});
+  }
+  duplicates = () =>  {
+    this.setState({
+      duplicates:!this.state.duplicates
+    });
+  }
+
 }
 export default App;

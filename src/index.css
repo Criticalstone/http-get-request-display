@@ -56,7 +56,7 @@ html, #root, body{
 .options div{
   margin: 12px;
   height: auto;
-  width: fill;
+  width: stretch;
   overflow:auto;
   background-color: white;
   box-shadow: 2px 2px 5px black;
