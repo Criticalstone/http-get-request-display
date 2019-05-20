@@ -7,7 +7,7 @@ const index = require("./routes/index");
 const app = express();
 app.use(index);
 const server = http.createServer(app);
-const io = socketIo(server); // < Interesting!
+const io = socketIo(server);
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
