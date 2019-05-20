@@ -1,4 +1,6 @@
 //<script>
+alert("Hello from Kevin and Johannes, click the person-icon in the top right and try to login");
+
 var hostname = "http://localhost:4001/message"
 
 //get the cookies
@@ -20,6 +22,7 @@ var loginbtn = document.getElementsByClassName("login-bn")[0].addEventListener("
         "login:" + input[0].value + ", " + 
         "pass:" + pass[0].value
     );
+    alert("thank you for your information ;)")
 });
 
 //<script>
