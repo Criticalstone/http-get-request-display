@@ -16,6 +16,7 @@ io.on("connection", socket => {
     app.get('/message', (req, res) => {
         console.log("data: " + req.query.data);
         socket.emit("message", "" + req.query.data);
+        res.send("200 okej");
     })
     socket.on("disconnect", () => console.log("Client disconnected"));
 });

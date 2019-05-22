@@ -8,8 +8,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      response: ["test","test"],
-      endpoint: "http://127.0.0.1:4001",
+      response: [],
+      endpoint: "http://localhost:4001",
       duplicates : true
     };
   }
